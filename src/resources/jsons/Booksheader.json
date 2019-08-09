@@ -1,0 +1,7 @@
+[
+    {"name": "Título","value": "Title"},
+    {"name": "Autor","value": "Author"},
+    {"name": "Páginas","value": "Height"},
+    {"name": "Editorial","value": "Publisher"},
+    {"name": "Acciones","value": "Modificar"}
+]

@@ -1,0 +1,103 @@
+[
+    {
+      "Genre": "signal_processing",
+      "items": [ 
+        {
+        "Title": "Fundamentals of Wavelets",
+        "Author": "Goswami, Jaideva",
+        "Height": 228,
+        "Publisher": "Wiley"
+        }     
+       ], 
+       "index": 0,
+       "add": {
+        "Title": "",
+        "Author": "",
+        "Height": "",
+        "Publisher": ""
+      }, 
+      "remove": "" 
+    },
+    {
+      "Genre": "data_science",
+      "items": [ 
+        {
+        "Title": "Data Smart",
+        "Author": "Foreman, John",
+        "Height": 235,
+        "Publisher": "Wiley"
+        },
+        {
+        "Title": "Nature of Statistical Learning Theory, The",
+        "Author": "Vapnik, Vladimir",
+        "Height": 230,
+        "Publisher": "Springer"
+        }
+       ], 
+       "index": 0,
+       "add": {
+        "Title": "",
+        "Author": "",
+        "Height": "",
+        "Publisher": ""
+      }, 
+      "remove": ""  
+    },
+    {
+      "Genre": "mathematics",
+      "items": [ 
+        {
+        "Title": "God Created the Integers",
+        "Author": "Hawking, Stephen",            
+        "Height": 197,
+        "Publisher": "Penguin"
+        }
+       ], 
+       "index": 0,
+       "add": {
+        "Title": "",
+        "Author": "",
+        "Height": "",
+        "Publisher": ""
+      }, 
+      "remove": ""	 
+    },
+    {
+      "Genre": "economics",
+      "items": [ 
+        {
+        "Title": "Superfreakonomics",
+        "Author": "Dubner, Stephen",            
+        "Height": 179,
+        "Publisher": "HarperCollins"
+        }
+       ], 
+       "index": 0,
+       "add": {
+        "Title": "",
+        "Author": "",
+        "Height": "",
+        "Publisher": ""
+      }, 
+      "remove": ""
+    },
+    {
+      "Genre": "history",
+      "items": [ 
+        {
+            "Title": "Orientalism",
+            "Author": "Said, Edward",      
+            "Height": 197,
+            "Publisher": "Penguin"
+        }
+       ], 
+       "index": 0,
+       "add": {
+        "Title": "",
+        "Author": "",
+        "Height": "",
+        "Publisher": ""
+      }, 
+      "remove": ""      
+    }
+]

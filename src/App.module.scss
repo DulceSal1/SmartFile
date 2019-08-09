@@ -1,0 +1,46 @@
+body, html {
+	height: 100%;
+	width: 100%;
+}
+
+.alignBoard{
+	display: flex;
+	text-align: left;
+	height: 100%;
+	width: 100%;
+}
+
+.menu{
+	height: 100%;
+	width: 25%;
+	background-color: #f44336!important;
+	padding-left: 15px;
+	padding-bottom: 15px;
+	padding-right: 15px;
+	position: fixed;
+}
+
+.libreria{
+	padding-left: 30%;
+	height: 100%;
+	width: 75%;
+	background-color: white;
+}
+
+h3{
+	color: white;
+	
+}
+
+.field{
+	color: white;
+}
+
+.renglon {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-between;
+width: 100%;
+}
+
