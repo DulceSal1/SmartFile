@@ -1,6 +1,6 @@
 [
     {
-      "Genre": "signal_processing",
+      "Genre": "Procesaminento de señales",
       "items": [ 
         {
         "Title": "Fundamentals of Wavelets",
@@ -19,7 +19,7 @@
       "remove": "" 
     },
     {
-      "Genre": "data_science",
+      "Genre": "Ciencias",
       "items": [ 
         {
         "Title": "Data Smart",
@@ -44,7 +44,7 @@
       "remove": ""  
     },
     {
-      "Genre": "mathematics",
+      "Genre": "Matemáticas",
       "items": [ 
         {
         "Title": "God Created the Integers",
@@ -63,7 +63,7 @@
       "remove": ""	 
     },
     {
-      "Genre": "economics",
+      "Genre": "Economía",
       "items": [ 
         {
         "Title": "Superfreakonomics",
@@ -82,7 +82,7 @@
       "remove": ""
     },
     {
-      "Genre": "history",
+      "Genre": "Historia",
       "items": [ 
         {
             "Title": "Orientalism",

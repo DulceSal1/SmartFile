@@ -16,7 +16,10 @@ class App extends React.PureComponent {
 			remove: ''
 		},
 		search:'',
-		header:Booksheader
+		header:Booksheader,
+		resultByTitle:'',
+		resultByAuthor:'',
+		resultByEdit:''
 	};
 
 	onAddBoardInputChange = (event) => {
@@ -99,14 +102,54 @@ class App extends React.PureComponent {
 		const value = event.target.value;
 		const nextState = produce(this.state, (draft) => {
 			draft.search = value;
-			console.log(value);
+
+			let k1=0;
+			draft.resultByTitle='';
+			let k2=0;
+			draft.resultByAuthor='';
+			let k3=0;
+			draft.resultByEdit='';
+
+			for (let i = 0; i < draft.books.length ; i++) {				
+				for (let j = 0; j < draft.books[i].items.length ; j++) {				
+					if(value !== '' && draft.books[i].items[j].Title.toLowerCase().includes(value.toLowerCase())){
+						draft.resultByTitle=  draft.resultByTitle + "["+draft.books[i].items[j].Title + '-' + draft.books[i].items[j].Author + '-'  + draft.books[i].items[j].Publisher  + '], ';
+						k1++;
+					}				
+				}					
+			}
+			if(k1===0){draft.resultByTitle='';}	
+
+			
+			for (let i = 0; i < draft.books.length ; i++) {				
+				for (let j = 0; j < draft.books[i].items.length ; j++) {
+					let sauthor=draft.books[i].items[j].Author.replace(',','');	
+					console.log(sauthor);
+					if(value !== '' && sauthor.toLowerCase().includes(value.toLowerCase())){
+						draft.resultByAuthor=  draft.resultByAuthor + "["+draft.books[i].items[j].Title + '-'  + draft.books[i].items[j].Author+ '-'  + draft.books[i].items[j].Publisher  + '], ';
+						k2++;
+					}				
+				}					
+			}
+			if(k2===0){draft.resultByAuthor='';}	
+
+
+			for (let i = 0; i < draft.books.length ; i++) {				
+				for (let j = 0; j < draft.books[i].items.length ; j++) {				
+					if(value !== '' && draft.books[i].items[j].Publisher.toLowerCase().includes(value.toLowerCase())){
+						draft.resultByEdit=  draft.resultByEdit + "["+draft.books[i].items[j].Title + '-'  + draft.books[i].items[j].Author + '-'  + draft.books[i].items[j].Publisher + '], ';
+						k3++;
+					}				
+				}					
+			}
+			if(k3===0){draft.resultByEdit='';}
 			
 		});
 		this.setState(nextState);
 	};
 
 	render() {
-		const { books,header} = this.state;
+		const { books,header,resultByTitle,resultByAuthor,resultByEdit} = this.state;
 		return (
 			<div className={styles.alignBoard}>				
 				<div className={styles.menu}>
@@ -116,10 +159,13 @@ class App extends React.PureComponent {
 					<legend className={styles.field}>Buscar:</legend>
 					<Input type="text" value={this.state.search} onChange={this.onSearchInputChange}/>
 					<fieldset><legend className={styles.field}>Por Título:</legend>
+					{resultByTitle}
 					</fieldset>
 					<fieldset><legend className={styles.field}>Por Autor:</legend>
+					{resultByAuthor}
 					</fieldset>
 					<fieldset><legend className={styles.field}>Por Editorial:</legend>
+					{resultByEdit}
 					</fieldset>
 					</fieldset>
 					<fieldset className={styles.field}>
