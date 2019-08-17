@@ -3,5 +3,6 @@
     {"name": "Autor","value": "Author"},
     {"name": "Páginas","value": "Height"},
     {"name": "Editorial","value": "Publisher"},
+    {"name": "Archivo","value": "File","type": "link"},
     {"name": "Acciones","value": "Modificar"}
 ]

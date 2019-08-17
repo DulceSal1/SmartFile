@@ -7,6 +7,8 @@ import booksimg from './resources/img/books.png';
 import Booksdata from './resources/jsons/Booksdata.json';
 import Booksheader from './resources/jsons/Booksheader.json';
 import Table from './components/Table/Table';
+import firebase from 'firebase';
+
 
 class App extends React.PureComponent {
 	state = {
@@ -19,9 +21,21 @@ class App extends React.PureComponent {
 		header:Booksheader,
 		resultByTitle:'',
 		resultByAuthor:'',
-		resultByEdit:''
+		resultByEdit:'',
+		fileurl:''
 	};
 
+	handeUploadSuccess = (filename) => {
+		const nextState = produce(this.state, (draft) => {
+			draft.fileurl=filename;
+		});
+		this.setState(nextState);
+
+		firebase.storage().ref('libros').child(filename).getDownloadURL().
+		then(url => this.setState({fileurl: url}));
+
+	}
+	
 	onAddBoardInputChange = (event) => {
 		const value = event.target.value;
 		const nextState = produce(this.state, (draft) => {
@@ -42,6 +56,7 @@ class App extends React.PureComponent {
 					Author: "",
 					Height: "",
 					Publisher: "",
+					File:""
 				}, 
 				remove: ""				
 			};
@@ -85,8 +100,10 @@ class App extends React.PureComponent {
 
 	AddBookClick = (index) => {
 		const nextState = produce(this.state, (draft) => {
+			draft.books[index].add.File= draft.fileurl;
 			draft.books[index].items = draft.books[index].items.concat(draft.books[index].add);
-			draft.books[index].items.add = ''
+			draft.books[index].items.add = '';			
+			draft.books[index].fileurl= '';
 		});
 		this.setState(nextState);
 	};
@@ -149,6 +166,7 @@ class App extends React.PureComponent {
 	};
 
 	render() {
+		console.log(this.state);
 		const { books,header,resultByTitle,resultByAuthor,resultByEdit} = this.state;
 		return (
 			<div className={styles.alignBoard}>				
@@ -172,14 +190,14 @@ class App extends React.PureComponent {
 					<legend>Agregar categoría:</legend>
 						<div className={styles.renglon}>
 						<Input type="text" value={this.state.input.add} onChange={this.onAddBoardInputChange}/>
-                        <Button type={'add'} onClick={this.onAddBoardButtonClick} />
+                        <Button type={'add'} onClick={this.onAddBoardButtonClick}>Subir</Button> />
 						</div>
 					</fieldset>
 				</div>
 
 				<div className={styles.libreria}>
 					{books.map((i,index) => (
-						<Table key={index} data={i.items} headers={header} genre={i.Genre} object={i} onAddTitleInputChange={(event) => this.AddTitleInputChange(event,index)}  onAddAuthorInputChange={(event) => this.AddAuthorInputChange(event,index)} onAddHeightInputChange={(event) => this.AddHeightInputChange(event,index)} onAddPublisherInputChange={(event) => this.AddPublisherInputChange(event,index)}  onAddBookClick={()=>this.AddBookClick(index)} onRemBookClick={(i)=>this.RemBookClick(i, index)}/>
+						<Table key={index} onhandeUploadSuccess={this.handeUploadSuccess} data={i.items} headers={header} genre={i.Genre} object={i} onAddTitleInputChange={(event) => this.AddTitleInputChange(event,index)}  onAddAuthorInputChange={(event) => this.AddAuthorInputChange(event,index)} onAddHeightInputChange={(event) => this.AddHeightInputChange(event,index)} onAddPublisherInputChange={(event) => this.AddPublisherInputChange(event,index)}  onAddBookClick={()=>this.AddBookClick(index)} onRemBookClick={(i)=>this.RemBookClick(i, index)}/>
 					))}		
 				</div>
 			</div>

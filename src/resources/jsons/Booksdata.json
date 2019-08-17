@@ -6,7 +6,8 @@
         "Title": "Fundamentals of Wavelets",
         "Author": "Goswami, Jaideva",
         "Height": 228,
-        "Publisher": "Wiley"
+        "Publisher": "Wiley",
+        "File":"https://firebasestorage.googleapis.com/v0/b/smartfile-206eb.appspot.com/o/libros%2FFundamentals%20of%20Wavelets.pdf?alt=media&token=1e8e4193-ce8a-4971-9b0d-5f5e90aa278a"
         }     
        ], 
        "index": 0,
@@ -14,7 +15,8 @@
         "Title": "",
         "Author": "",
         "Height": "",
-        "Publisher": ""
+        "Publisher": "",
+        "File":""
       }, 
       "remove": "" 
     },
@@ -25,13 +27,15 @@
         "Title": "Data Smart",
         "Author": "Foreman, John",
         "Height": 235,
-        "Publisher": "Wiley"
+        "Publisher": "Wiley",
+        "File":"https://firebasestorage.googleapis.com/v0/b/smartfile-206eb.appspot.com/o/libros%2FLibro%20de%20prueba.pdf?alt=media&token=0165ab5c-7c52-480d-9b81-b73faba53d1b"
         },
         {
         "Title": "Nature of Statistical Learning Theory, The",
         "Author": "Vapnik, Vladimir",
         "Height": 230,
-        "Publisher": "Springer"
+        "Publisher": "Springer",
+        "File":"https://firebasestorage.googleapis.com/v0/b/smartfile-206eb.appspot.com/o/libros%2FLibro%20de%20prueba.pdf?alt=media&token=0165ab5c-7c52-480d-9b81-b73faba53d1b"
         }
        ], 
        "index": 0,
@@ -39,7 +43,8 @@
         "Title": "",
         "Author": "",
         "Height": "",
-        "Publisher": ""
+        "Publisher": "",
+        "File":""
       }, 
       "remove": ""  
     },
@@ -50,7 +55,8 @@
         "Title": "God Created the Integers",
         "Author": "Hawking, Stephen",            
         "Height": 197,
-        "Publisher": "Penguin"
+        "Publisher": "Penguin",
+        "File":"https://firebasestorage.googleapis.com/v0/b/smartfile-206eb.appspot.com/o/libros%2FLibro%20de%20prueba.pdf?alt=media&token=0165ab5c-7c52-480d-9b81-b73faba53d1b"
         }
        ], 
        "index": 0,
@@ -58,7 +64,8 @@
         "Title": "",
         "Author": "",
         "Height": "",
-        "Publisher": ""
+        "Publisher": "",
+        "File":""
       }, 
       "remove": ""	 
     },
@@ -69,7 +76,8 @@
         "Title": "Superfreakonomics",
         "Author": "Dubner, Stephen",            
         "Height": 179,
-        "Publisher": "HarperCollins"
+        "Publisher": "HarperCollins",
+        "File":"https://firebasestorage.googleapis.com/v0/b/smartfile-206eb.appspot.com/o/libros%2FLibro%20de%20prueba.pdf?alt=media&token=0165ab5c-7c52-480d-9b81-b73faba53d1b"
         }
        ], 
        "index": 0,
@@ -77,7 +85,8 @@
         "Title": "",
         "Author": "",
         "Height": "",
-        "Publisher": ""
+        "Publisher": "",
+        "File":""
       }, 
       "remove": ""
     },
@@ -88,7 +97,8 @@
             "Title": "Orientalism",
             "Author": "Said, Edward",      
             "Height": 197,
-            "Publisher": "Penguin"
+            "Publisher": "Penguin",
+            "File":"https://firebasestorage.googleapis.com/v0/b/smartfile-206eb.appspot.com/o/libros%2FLibro%20de%20prueba.pdf?alt=media&token=0165ab5c-7c52-480d-9b81-b73faba53d1b"
         }
        ], 
        "index": 0,
@@ -96,7 +106,8 @@
         "Title": "",
         "Author": "",
         "Height": "",
-        "Publisher": ""
+        "Publisher": "",
+        "File":""
       }, 
       "remove": ""      
     }

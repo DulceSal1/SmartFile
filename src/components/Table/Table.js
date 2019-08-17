@@ -5,11 +5,20 @@ import Input from '../Input/Input';
 import Button from '../Button/Button';
 import { IconXMark } from '../../resources/svg/Icons';
 
+import FileUploader from 'react-firebase-file-uploader';
+import firebase from 'firebase'
+import config from '../../firebase-config';
+
+firebase.initializeApp(config);
+
+
 export default (class Table extends React.PureComponent {
 	formatData = (data, type) => {
 		switch (type) {
 			case 'text':
 				return data;
+			case 'link':
+				return <a href={data} target='_blank'>Ver</a>;
 			case 'number':
 				return data.toLocaleString(navigator.language, { minimumFractionDigits: 0 });
 			case 'money':
@@ -22,7 +31,7 @@ export default (class Table extends React.PureComponent {
 
 
 	render() {
-		const { headers, data, genre, object,onAddTitleInputChange, onAddAuthorInputChange,onAddHeightInputChange,onAddPublisherInputChange,onAddBookClick,onRemBookClick} = this.props;
+		const { onhandeUploadSuccess, headers, data, genre, object,onAddTitleInputChange, onAddAuthorInputChange,onAddHeightInputChange,onAddPublisherInputChange,onAddBookClick,onRemBookClick} = this.props;
 		return (
 			<div className={styles.main}>
                 <h2>{genre}</h2>
@@ -73,8 +82,19 @@ export default (class Table extends React.PureComponent {
 							<Input type="text" value={object.add.Publisher} onChange={onAddPublisherInputChange}/>
 							</td>
 							<td className={styles.footer_item}>
+							<label style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, pointer: 'cursor'}}>
+							Libro
+							<FileUploader
+							hidden
+							storageRef={firebase.storage().ref('libros')}
+							onUploadSuccess={onhandeUploadSuccess}
+							/>
+ 						    </label>
+							</td>
+							<td className={styles.footer_item}>
 							<Button type={'add'} onClick={onAddBookClick} />
 							</td>
+							
 							
 						</tr>
 					</tfoot>
