@@ -18,7 +18,7 @@ export default (class Table extends React.PureComponent {
 			case 'text':
 				return data;
 			case 'link':
-				return <a href={data} target='_blank'>Ver</a>;
+				return <a href={data} target='_blank' rel="noopener noreferrer">Ver</a>;
 			case 'number':
 				return data.toLocaleString(navigator.language, { minimumFractionDigits: 0 });
 			case 'money':
@@ -31,7 +31,7 @@ export default (class Table extends React.PureComponent {
 
 
 	render() {
-		const { onhandeUploadSuccess, headers, data, genre, object,onAddTitleInputChange, onAddAuthorInputChange,onAddHeightInputChange,onAddPublisherInputChange,onAddBookClick,onRemBookClick} = this.props;
+		const { progress, onhandeUploadSuccess,handleProgress, headers, data, genre, object,onAddTitleInputChange, onAddAuthorInputChange,onAddHeightInputChange,onAddPublisherInputChange,onAddBookClick,onRemBookClick} = this.props;
 		return (
 			<div className={styles.main}>
                 <h2>{genre}</h2>
@@ -82,12 +82,14 @@ export default (class Table extends React.PureComponent {
 							<Input type="text" value={object.add.Publisher} onChange={onAddPublisherInputChange}/>
 							</td>
 							<td className={styles.footer_item}>
+							<p>{progress}</p>
 							<label style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, pointer: 'cursor'}}>
 							Libro
 							<FileUploader
 							hidden
 							storageRef={firebase.storage().ref('libros')}
 							onUploadSuccess={onhandeUploadSuccess}
+							onProgress={handleProgress}
 							/>
  						    </label>
 							</td>
